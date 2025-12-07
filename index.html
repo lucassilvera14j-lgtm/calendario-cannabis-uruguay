@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Lunar</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        
+        <nav class="sidebar">
+            <h2 class="sidebar-title">Menú</h2>
+            <ul>
+                <li class="menu-item active" data-target="calendario">Calendario</li>
+                <li class="menu-item" data-target="razas">Razas</li>
+                <li class="menu-item" data-target="semillas">Semillas</li>
+                <li class="menu-item" data-target="lunas">Lunas</li>
+                <li class="menu-item" data-target="nutricion">Nutrición</li>
+                <li class="menu-item" data-target="notas">Notas</li> 
+            </ul>
+        </nav>
+        
+        <div class="main-content">
+            
+            <div id="calendario" class="content-section active">
+                <div class="calendar-card">
+                    <header class="calendar-header">
+                        <button class="nav-button" id="prev-month">❮</button>
+                        <h1 id="month-year" class="month-title"></h1>
+                        <button class="nav-button" id="next-month">❯</button>
+                    </header>
+                    
+                    <div class="calendar-grid">
+                        <div class="weekdays-row">
+                            <span>D</span>
+                            <span>L</span>
+                            <span>M</span>
+                            <span>M</span> 
+                            <span>J</span>
+                            <span>V</span>
+                            <span>S</span>
+                        </div>
+                        <div class="days-container" id="calendar-days">
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="razas" class="content-section">
+                <h2 class="section-title">Guía de Razas</h2>
+                
+                <div class="strain-filters">
+                    <button class="filter-button active" data-filter="all">Todas</button>
+                    <button class="filter-button" data-filter="6months">Fotoperiódicas</button>
+                    <button class="filter-button" data-filter="automatic">Automáticas</button>
+                </div>
+                
+                <dl class="strain-list">
+                    
+                    <dt data-cycle="6months">Acapulco Gold <img class="strain-img" src="acapulco.jpg" alt="Acapulco Gold"></dt>
+                    <dd>
+                        <strong>Tipo: Sativa</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 500-600g aprox.</strong><strong>Efecto: Eufórico, Creativo</strong><strong>Cosecha: Octubre</strong><strong>TCH: 19% | CBD: Bajo</strong>
+                        <p>Clásica Sativa pura. Famosa por su fuerte efecto energizante y duradero. Requiere mucho sol y espacio, ideal para exterior de ciclo largo.</p>
+                    </dd>
+                    
+                    <dt data-cycle="6months">Amnesia Haze <img class="strain-img" src="amnesia.jpg" alt="Amnesia Haze"></dt>
+                    <dd>
+                        <strong>Tipo: Sativa</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 600-700g aprox.</strong><strong>Efecto: Cerebral, Energético</strong><strong>Cosecha: Octubre-Noviembre</strong><strong>TCH: 22% | CBD: Bajo</strong>
+                        <p>Una de las Sativas más potentes y famosas. Produce un alto rendimiento con un efecto psicoactivo intenso. Es sensible a la humedad tardía.</p>
+                    </dd>
+
+                    <dt data-cycle="5months">Northern Lights <img class="strain-img" src="northern.jpg" alt="Northern Lights"></dt>
+                    <dd>
+                        <strong>Tipo: Índica</strong><strong>Ciclo: Fotoperiódica (5 meses)</strong><strong>Cultivo/Genera: 450-550g aprox.</strong><strong>Efecto: Relajante, Sedante</strong><strong>Cosecha: Septiembre</strong><strong>TCH: 18% | CBD: Bajo</strong>
+                        <p>Índica clásica, robusta y de fácil cultivo. Ideal para principiantes y para cosechar antes que las Sativas, evitando las lluvias de finales de otoño.</p>
+                    </dd>
+                    
+                    <dt data-cycle="6months">Moby Dick <img class="strain-img" src="moby.jpg" alt="Moby Dick"></dt>
+                    <dd>
+                        <strong>Tipo: Híbrida</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 700-1000g aprox.</strong><strong>Efecto: Eufórico, Potente</strong><strong>Cosecha: Finales de Octubre</strong><strong>TCH: 21% | CBD: Bajo</strong>
+                        <p>Una gran productora con dominancia Sativa. Requiere abundante nutrición y mucho espacio. Famosa por su potencia y rendimiento extraordinario.</p>
+                    </dd>
+                    
+                    <dt data-cycle="6months">Bruce Banner <img class="strain-img" src="bruce.jpg" alt="Bruce Banner"></dt>
+                    <dd>
+                        <strong>Tipo: Híbrida</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 600-800g aprox.</strong><strong>Efecto: Potente, Físico</strong><strong>Cosecha: Principios de Octubre</strong><strong>TCH: 25% | CBD: Bajo</strong>
+                        <p>Una de las cepas más fuertes en el mercado. Híbrido potente que combina efectos cerebrales con un fuerte impacto físico. Cosecha a principios de Octubre.</p>
+                    </dd>
+                    
+                    <dt data-cycle="6months">White Widow <img class="strain-img" src="white.jpg" alt="White Widow"></dt>
+                    <dd>
+                        <strong>Tipo: Híbrida</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 550-650g aprox.</strong><strong>Efecto: Equilibrado</strong><strong>Cosecha: Finales de Septiembre</strong><strong>TCH: 20% | CBD: Bajo</strong>
+                        <p>Clásico híbrido holandés de fácil cultivo. Efecto equilibrado y placentero. Excelente resistencia, lo que la hace buena para principiantes.</p>
+                    </dd>
+                    
+                    <dt data-cycle="automatic">Auto Blue Dream <img class="strain-img" src="auto_blue.jpg" alt="Auto Blue Dream"></dt>
+                    <dd>
+                        <strong>Tipo: Híbrida</strong><strong>Ciclo: Automática</strong><strong>Cultivo/Genera: 100-150g aprox.</strong><strong>Efecto: Equilibrado, Suave</strong><strong>Cosecha: 10-11 semanas desde germinación</strong><strong>TCH: 17% | CBD: Bajo</strong>
+                        <p>Versión rápida de la popular Blue Dream. Produce un efecto suave, ideal para uso diurno. Perfecta para cosechas múltiples en verano.</p>
+                    </dd>
+                    
+                    <dt data-cycle="6months">Gorilla Glue <img class="strain-img" src="gorilla.jpg" alt="Gorilla Glue"></dt>
+                    <dd>
+                        <strong>Tipo: Híbrida</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 550-700g aprox.</strong><strong>Efecto: Sedante, Pesado</strong><strong>Cosecha: Mediados de Octubre</strong><strong>TCH: 24% | CBD: Bajo</strong>
+                        <p>Famosa por su extrema pegajosidad. Produce un efecto muy sedante y relajante, ideal para la noche. Sus cogollos son densos y muy resinosos.</p>
+                    </dd>
+                    
+                    <dt data-cycle="6months">Green Gelato <img class="strain-img" src="green.jpg" alt="Green Gelato"></dt>
+                    <dd>
+                        <strong>Tipo: Híbrida</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 700-800g aprox.</strong><strong>Efecto: Eufórico, Físico</strong><strong>Cosecha: Principios de Octubre</strong><strong>TCH: 23% | CBD: Bajo</strong>
+                        <p>Cepa deliciosa y potente, con sabores dulces. Ofrece un efecto eufórico y creativo que rápidamente se convierte en una sensación física de relajación.</p>
+                    </dd>
+                    
+                    <dt data-cycle="5months">Skunk #1 <img class="strain-img" src="skunk.jpg" alt="Skunk #1"></dt>
+                    <dd>
+                        <strong>Tipo: Híbrida</strong><strong>Ciclo: Fotoperiódica (5 meses)</strong><strong>Cultivo/Genera: 500-600g aprox.</strong><strong>Efecto: Relajante, Feliz</strong><strong>Cosecha: Finales de Septiembre</strong><strong>TCH: 17% | CBD: Medio</strong>
+                        <p>La base de muchas genéticas modernas. Famosa por su olor penetrante y su crecimiento robusto. Un clásico confiable con buena resistencia.</p>
+                    </dd>
+                    
+                    <dt data-cycle="automatic">Auto Critical <img class="strain-img" src="auto_critical.jpg" alt="Auto Critical"></dt>
+                    <dd>
+                        <strong>Tipo: Índica</strong><strong>Ciclo: Automática</strong><strong>Cultivo/Genera: 70-120g aprox.</strong><strong>Efecto: Físico, Calmante</strong><strong>Cosecha: 8-9 semanas desde germinación</strong><strong>TCH: 18% | CBD: Bajo</strong>
+                        <p>Versión rápida y compacta de Critical. Ciclo de vida muy corto, ideal para cultivos de guerrilla o balcones. Produce un efecto relajante corporal.</p>
+                    </dd>
+                    
+                    <dt data-cycle="automatic">Auto Skunk <img class="strain-img" src="auto_skunk.jpg" alt="Auto Skunk"></dt>
+                    <dd>
+                        <strong>Tipo: Híbrida</strong><strong>Ciclo: Automática</strong><strong>Cultivo/Genera: 100-150g aprox.</strong><strong>Efecto: Relajante, Suave</strong><strong>Cosecha: 10 semanas desde germinación</strong><strong>TCH: 16% | CBD: Bajo</strong>
+                        <p>Combina la fiabilidad de Skunk con la velocidad Auto. Crecimiento rápido y cosecha temprana. Excelente opción para quienes buscan facilidad y rapidez.</p>
+                    </dd>
+
+                    <dt data-cycle="6months">Super Lemon Haze <img class="strain-img" src="super_lemon.jpg" alt="Super Lemon Haze"></dt>
+                    <dd>
+                        <strong>Tipo: Sativa</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 700-1000g aprox.</strong><strong>Efecto: Energético, Cítrico</strong><strong>Cosecha: Finales de Octubre</strong><strong>TCH: 21% | CBD: Bajo</strong>
+                        <p>Sativa con sabor intenso a limón y gran producción. Su efecto es muy cerebral, eufórico y motivador, perfecta para el día a día.</p>
+                    </dd>
+
+                    <dt data-cycle="6months">Critical + 2.0 <img class="strain-img" src="critical_2.jpg" alt="Critical + 2.0"></dt>
+                    <dd>
+                        <strong>Tipo: Índica</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 900-1200g aprox.</strong><strong>Efecto: Potente, Relajante</strong><strong>Cosecha: Finales de Septiembre</strong><strong>TCH: 20% | CBD: Bajo</strong>
+                        <p>Versión mejorada de Critical con más resistencia y producción. Una Índica dominante extremadamente productiva. Cosecha temprana y efecto potente.</p>
+                    </dd>
+
+                    <dt data-cycle="6months">Orange Bud <img class="strain-img" src="orange.jpg" alt="Orange Bud"></dt>
+                    <dd>
+                        <strong>Tipo: Sativa</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 600-700g aprox.</strong><strong>Efecto: Eufórico, Concentrado</strong><strong>Cosecha: Mediados de Octubre</strong><strong>TCH: 18% | CBD: Bajo</strong>
+                        <p>Pura Skunk con un claro sabor cítrico (mandarina/naranja). Produce un efecto alegre y eufórico. Es una cepa muy estable y de cultivo agradecido.</p>
+                    </dd>
+
+                    <dt data-cycle="6months">AK-47 <img class="strain-img" src="ak47.jpg" alt="AK-47"></dt>
+                    <dd>
+                        <strong>Tipo: Híbrida</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 500-650g aprox.</strong><strong>Efecto: Equilibrado, Complejo</strong><strong>Cosecha: Mediados de Octubre</strong><strong>TCH: 19% | CBD: Bajo</strong>
+                        <p>Híbrido legendario que ofrece un efecto equilibrado, potente pero no abrumador. Famosa por su olor intenso y gran calidad de flor.</p>
+                    </dd>
+
+                    <dt data-cycle="6months">Cheese <img class="strain-img" src="cheese.jpg" alt="Cheese"></dt>
+                    <dd>
+                        <strong>Tipo: Índica</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 600-800g aprox.</strong><strong>Efecto: Relajante, Feliz</strong><strong>Cosecha: Finales de Octubre</strong><strong>TCH: 18% | CBD: Bajo</strong>
+                        <p>Cepa británica conocida por su aroma fuerte y único (a queso curado). Produce un efecto relajante, ideal para aliviar el estrés.</p>
+                    </dd>
+
+                    <dt data-cycle="automatic">Auto Wedding Cake <img class="strain-img" src="auto_wedding.jpg" alt="Auto Wedding Cake"></dt>
+                    <dd>
+                        <strong>Tipo: Híbrida</strong><strong>Ciclo: Automática</strong><strong>Cultivo/Genera: 100-180g aprox.</strong><strong>Efecto: Relajante, Eufórico</strong><strong>Cosecha: 10 semanas desde germinación</strong><strong>TCH: 20% | CBD: Bajo</strong>
+                        <p>Automática moderna con altos niveles de TCH. Produce cogollos densos y resinosos con un efecto eufórico inicial que termina en una profunda relajación.</p>
+                    </dd>
+
+                    <dt data-cycle="6months">Purple Haze <img class="strain-img" src="purple.jpg" alt="Purple Haze"></dt>
+                    <dd>
+                        <strong>Tipo: Sativa</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 500-700g aprox.</strong><strong>Efecto: Eufórico, Psicodélico</strong><strong>Cosecha: Finales de Octubre</strong><strong>TCH: 20% | CBD: Bajo</strong>
+                        <p>Famosa Sativa con tonos morados. Ofrece un subidón cerebral, eufórico y casi psicodélico. Requiere clima cálido y sol para desarrollar todo su potencial.</p>
+                    </dd>
+
+                    <dt data-cycle="6months">Jack Herer <img class="strain-img" src="jack.jpg" alt="Jack Herer"></dt>
+                    <dd>
+                        <strong>Tipo: Sativa</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 500-700g aprox.</strong><strong>Efecto: Cerebral, Creativo</strong><strong>Cosecha: Finales de Septiembre</strong><strong>TCH: 18% | CBD: Bajo</strong>
+                        <p>Considerada una de las mejores Sativas. Su efecto es cerebral, claro y motivador, perfecto para tareas creativas. Cosecha relativamente temprana para una Sativa.</p>
+                    </dd>
+                    
+                    <dt data-cycle="6months">Blue Dream <img class="strain-img" src="blue_dream.jpg" alt="Blue Dream"></dt>
+                    <dd>
+                        <strong>Tipo: Híbrida</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 500-700g aprox.</strong><strong>Efecto: Eufórico, Relajante</strong><strong>Cosecha: Finales de Octubre</strong><strong>TCH: 18% | CBD: Bajo</strong>
+                        <p>Híbrida de gran popularidad conocida por su equilibrio perfecto entre relajación física y euforia cerebral. Produce cosechas generosas y es resistente.</p>
+                    </dd>
+
+                    <dt data-cycle="6months">Girl Scout Cookies (GSC) <img class="strain-img" src="gsc.jpg" alt="Girl Scout Cookies (GSC)"></dt>
+                    <dd>
+                        <strong>Tipo: Híbrida</strong><strong>Ciclo: Fotoperiódica (6 meses)</strong><strong>Cultivo/Genera: 400-600g aprox.</strong><strong>Efecto: Intenso, Feliz</strong><strong>Cosecha: Principios de Octubre</strong><strong>TCH: 23% | CBD: Bajo</strong>
+                        <p>Cepa moderna de alta potencia, famosa por su sabor dulce y efecto intenso y eufórico. Tiende a ser de estatura media y muy resinosa.</p>
+                    </dd>
+
+                </dl>
+            </div>
+            
+            <div id="semillas" class="content-section">
+                <h2 class="section-title">Guía de Semillas</h2>
+                <p>Información detallada sobre tipos de semillas (Regulares, Feminizadas, Autoflorecientes) y dónde conseguirlas.</p>
+                
+                <dl>
+                    <dt>Semillas Feminizadas</dt>
+                    <dd>Son las más comunes, aseguran plantas hembra casi al 100%. Ideales para principiantes y cultivadores con espacio limitado.</dd>
+                    <dt>Semillas Autoflorecientes</dt>
+                    <dd>No dependen del ciclo de luz, florecen automáticamente en pocas semanas. Perfectas para cultivos rápidos o en exterior en verano. Generan menos rendimiento.</dd>
+                    <dt>Semillas Regulares</dt>
+                    <dd>Producen machos y hembras. Esenciales para criar nuevas variedades o preservar genética.</dd>
+                </dl>
+            </div>
+
+            <div id="lunas" class="content-section">
+                <h2 class="section-title">Calendario Lunar de Cultivo</h2>
+                
+                <p>Selecciona un mes y año para ver las fases lunares y su actividad recomendada:</p>
+                <div class="moon-selector-controls">
+                    <select id="moon-month-select" class="moon-select-input"></select>
+                    <select id="moon-year-select" class="moon-select-input"></select>
+                    <button id="search-moon-button" class="filter-button active">Buscar</button>
+                </div>
+                
+                <div id="moon-results" class="moon-results-container">
+                    </div>
+                
+            </div>
+            
+            <div id="nutricion" class="content-section">
+                <h2 class="section-title">Guía de Nutrición Esencial (N-P-K)</h2>
+                <p>Guía de productos recomendados para la nutrición de tus plantas según su ciclo de vida:</p>
+                
+                <div class="strain-filters">
+                    <button class="filter-button active" data-nutri-filter="foto">Fotoperiódicas (6 meses)</button>
+                    <button class="filter-button" data-nutri-filter="auto">Automáticas</button>
+                </div>
+
+                <div id="nutricion-content">
+                    
+                    <dl class="nutri-list active" data-nutri-target="foto">
+                        <dt>Fase de Crecimiento (Vegetación)</dt>
+                        <dd><strong>Nutriente Clave: Nitrógeno (N).</strong><br>
+                        Se recomienda un producto alto en N para el desarrollo foliar, como un **"Grow A+B"** o un **"Bio Grow"**. Aplicar durante las 4-6 primeras semanas.</dd>
+
+                        <dt>Fase de Floración (Pre-Floración y Engorde)</dt>
+                        <dd><strong>Nutriente Clave: Fósforo (P) y Potasio (K).</strong><br>
+                        Usar una base de **"Bloom A+B"** o **"Bio Bloom"**. Para el engorde, añadir un **PK 13/14** o un **Booster de Floración** desde la semana 4 de floración.</dd>
+
+                        <dt>Limpieza Final (Flushing)</dt>
+                        <dd><strong>Recomendación: Agua Osmosis o Destilada.</strong><br>
+                        Regar solo con agua sin nutrientes durante los últimos 10-14 días para que la planta consuma sus reservas y mejorar el sabor final.</dd>
+                    </dl>
+
+                    <dl class="nutri-list" data-nutri-target="auto" style="display: none;">
+                        <dt>Fase de Crecimiento (Semanas 1-3)</dt>
+                        <dd><strong>Nutriente Clave: Nitrógeno (N) Suave.</strong><br>
+                        Las Automáticas son sensibles. Usar **media dosis** de un fertilizante "Grow" o empezar con un **estimulador de raíces** (Root Booster) durante las primeras 3 semanas.</dd>
+
+                        <dt>Fase de Floración (Semanas 4-8)</dt>
+                        <dd><strong>Nutriente Clave: P y K Máximo.</strong><br>
+                        A partir de la semana 4, cambiar a fertilizante "Bloom". Aumentar gradualmente el **PK Booster** ya que el ciclo es muy corto y necesita nutrientes concentrados rápidamente.</dd>
+
+                        <dt>Limpieza Final (Flushing)</dt>
+                        <dd><strong>Recomendación: Agua Pura.</strong><br>
+                        Debido a su ciclo corto, el *Flushing* (limpieza) suele ser de solo **5 a 7 días** antes de la cosecha. Usar agua con pH ajustado.</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div id="notas" class="content-section">
+                <h2 class="section-title">Mis Notas de Cultivo</h2>
+                <div id="notes-list-container">
+                    <p>Aquí se mostrarán las notas que has guardado en el calendario.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="note-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modal-title">Añadir Nota para el día</h3>
+            
+            <form id="note-form">
+                <input type="hidden" id="note-date-key">
+                <textarea id="note-text" placeholder="Escribe tu nota de cultivo (Riego, Poda, Trasplante, Problemas...)"></textarea>
+                
+                <label for="note-image-file" class="file-label">
+                    Adjuntar Imagen
+                </label>
+                <input type="file" id="note-image-file" accept="image/*" style="display: none;">
+                <span id="file-name" class="file-name">Ningún archivo seleccionado.</span>
+
+                <button type="submit" id="save-note-button" class="filter-button active">Guardar Nota</button>
+                <button type="button" id="delete-note-button" class="filter-button delete-button" style="display: none;">Eliminar Nota</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast-container"></div> 
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,590 @@
+/* 1. Variables de Color y Tipografía */
+:root {
+    --primary-color: #333333;      
+    --text-color: #1a1a1a;         
+    --background-color: #ffffff;   
+    --hover-color: #e8e8e8;        
+    --border-color: #dddddd;       
+    --accent-color: #ffcc00; 
+    --danger-color: #dc3545; /* Rojo para borrar */
+    --font-family: 'Roboto', sans-serif;
+    --sidebar-width: 180px;        
+}
+
+body {
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--hover-color); 
+    color: var(--text-color);
+}
+
+/* --- LAYOUT PRINCIPAL CON MENÚ LATERAL --- */
+
+.app-container {
+    display: flex;
+    width: 90%; 
+    max-width: 1000px; 
+    min-height: 80vh;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+    overflow: hidden; 
+}
+
+/* Estilos del Menú Lateral (Sidebar) */
+.sidebar {
+    width: var(--sidebar-width);
+    padding: 20px 0;
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; 
+}
+
+.sidebar-title {
+    font-size: 1.2em;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    padding: 10px 20px;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-left 0.2s; 
+    border-left: 5px solid transparent;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item.active {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    font-weight: 700;
+    border-left: 5px solid var(--accent-color); 
+}
+
+/* Contenido Principal (General) */
+.main-content {
+    flex-grow: 1; 
+    display: flex;
+    align-items: flex-start;
+    padding: 30px; 
+    position: relative; 
+}
+
+/* --- Estilos para las Secciones de Contenido (Mostrar/Ocultar) --- */
+.content-section {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    width: calc(100% - 60px); 
+    height: auto;
+    background-color: var(--background-color);
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    max-width: 380px; 
+}
+
+.content-section.active {
+    opacity: 1;
+    visibility: visible;
+    position: static; 
+    max-width: 650px; 
+    margin: 0 auto; 
+}
+
+#calendario.content-section.active {
+    max-width: 380px; 
+}
+
+.section-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent-color); 
+    padding-bottom: 5px;
+}
+
+.content-section p, .content-section ul, .content-section ol {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* --- ESTILOS DE LISTAS DESCRIPTIVAS (Razas, Semillas, Nutrición) --- */
+
+.content-section dl {
+    padding: 10px;
+    background-color: #fcfcfc;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.content-section dt {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: var(--primary-color); 
+    padding: 8px 0;
+    margin-top: 15px;
+    border-bottom: 1px dashed #e0e0e0;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    transition: opacity 0.3s ease; 
+}
+
+.content-section dt:first-of-type {
+    margin-top: 0;
+}
+
+.content-section dd {
+    margin: 5px 0 20px 0; 
+    padding-left: 10px;
+    line-height: 1.5;
+    color: #555;
+    transition: opacity 0.3s ease; 
+}
+
+/* === ESTILOS DE ETIQUETAS POR CAMPO (Razas) === */
+.content-section dd strong {
+    display: inline-block; 
+    padding: 3px 8px;
+    margin-right: 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 5px;
+    white-space: nowrap; 
+}
+
+/* TIPO (Sativa, Índica, Híbrida) */
+.content-section dd strong:nth-child(1) {
+    background-color: #007bff; /* Azul */
+}
+
+/* CICLO (Automática, Fotoperiódica, Meses) */
+.content-section dd strong:nth-child(2) {
+    background-color: #28a745; /* Verde */
+}
+
+/* CULTIVO / PRODUCCIÓN (Cuánto genera, Requerimientos) */
+.content-section dd strong:nth-child(3) {
+    background-color: #ffc107; /* Amarillo/Dorado */
+    color: #333; /* Texto oscuro para contraste */
+}
+
+/* EFECTO */
+.content-section dd strong:nth-child(4) {
+    background-color: #dc3545; /* Rojo */
+}
+
+/* COSECHA */
+.content-section dd strong:nth-child(5) {
+    background-color: #6f42c1; /* Púrpura */
+}
+
+/* TCH / CBD (CORREGIDO) */
+.content-section dd strong:nth-child(6) {
+    background-color: #00bcd4; /* Cian/Celeste */
+}
+
+
+/* Filtro de Razas y Nutrición */
+.strain-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+.filter-button {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.filter-button:hover {
+    background-color: var(--hover-color);
+}
+
+.filter-button.active {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border-color: var(--accent-color);
+    font-weight: 700;
+}
+
+.delete-button {
+    background-color: var(--danger-color);
+    color: white;
+    border-color: var(--danger-color);
+    margin-top: 10px;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+    color: white;
+}
+
+.strain-list dt.hidden,
+.strain-list dt.hidden + dd {
+    display: none;
+}
+
+/* IMAGEN DE RAZA AUMENTADA */
+.strain-img {
+    width: 80px; 
+    height: 80px; 
+    object-fit: cover;
+    border-radius: 4px;
+    margin-left: 10px;
+    border: 2px solid var(--accent-color); 
+    flex-shrink: 0;
+}
+
+
+/* --- ESTILOS DEL CALENDARIO --- */
+
+.calendar-card {
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    padding: 0; 
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.month-title {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.nav-button {
+    background: none;
+    border: 2px solid transparent; 
+    color: var(--primary-color);
+    font-size: 1.5em; 
+    cursor: pointer;
+    padding: 10px 15px; 
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    border-radius: 4px;
+}
+
+.nav-button:hover {
+    color: var(--background-color);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color); 
+}
+
+.weekdays-row, .days-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+/* Fila de Días de la Semana */
+.weekdays-row span {
+    font-size: 0.9em;
+    font-weight: 700;
+    color: var(--primary-color);
+    padding: 8px 0;
+}
+
+.day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px; 
+    height: 38px;
+    margin: 1px;
+    border-radius: 4px; 
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+    cursor: pointer; 
+    position: relative; /* Para la marca de nota */
+}
+
+.day:hover:not(.empty-day):not(.today) {
+    background-color: var(--hover-color);
+}
+
+.today {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.empty-day {
+    visibility: hidden;
+}
+
+/* MARCA DE NOTA CREADA */
+.has-note::after {
+    content: '📝';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 0.6em;
+}
+
+/* DESHABILITACIÓN COMPLETA DE LA FILA DE FASES LUNARES DEL CALENDARIO PRINCIPAL */
+.moon-phase-row, 
+.moon-phase-cell,
+.moon-icon { 
+    display: none !important; 
+}
+
+/* ESTILOS PARA SELECTOR DE LUNAS (EN LA SECCIÓN LUNAS) */
+
+.moon-selector-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.moon-select-input {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1em;
+    min-width: 120px;
+}
+
+.moon-results-container {
+    padding: 15px;
+    border: 1px solid #eee;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+}
+
+.moon-phase-result {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-bottom: 1px dashed var(--border-color);
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+.moon-phase-result:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.moon-phase-result strong {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+/* --- ESTILOS DEL MODAL DE NOTAS --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 10; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#note-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#note-text {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box; 
+    resize: vertical;
+    font-family: var(--font-family);
+}
+
+.file-label {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.file-label:hover {
+    background-color: #555;
+}
+
+.file-name {
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+#save-note-button, #delete-note-button {
+    margin-top: 15px;
+}
+
+/* --- ESTILOS DE LA SECCIÓN NOTAS GUARDADAS --- */
+.note-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    background-color: #fffaf0; 
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.note-item:hover {
+    background-color: #f5f5f5;
+}
+
+.note-item h4 {
+    margin: 0 0 10px 0;
+    color: var(--primary-color);
+    font-size: 1.2em;
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 5px;
+}
+
+.note-item p {
+    margin: 5px 0;
+    color: #333;
+}
+
+/* ESTILO CLAVE PARA MOSTRAR IMAGEN CARGADA */
+.note-item .note-image {
+    max-width: 100%;
+    max-height: 250px; 
+    width: auto; 
+    height: auto;
+    object-fit: contain; 
+    border-radius: 4px;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+
+/* --- ESTILOS PARA NOTIFICACIONES PERSONALIZADAS (TOAST) --- */
+
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+    transform: translateX(100%);
+    min-width: 250px;
+    max-width: 350px;
+    font-size: 0.9em;
+    font-weight: 500;
+    border-left: 5px solid var(--accent-color);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast.success {
+    border-left-color: #28a745; /* Verde */
+}
+
+.toast.error {
+    background-color: var(--danger-color);
+    border-left-color: #f8d7da; /* Rojo más claro */
+}
+
+.toast.info {
+    border-left-color: #007bff; /* Azul */
+}
