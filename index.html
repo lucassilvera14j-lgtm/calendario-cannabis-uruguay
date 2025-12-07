@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Lunar Cannabis</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght=300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        
+        <nav class="sidebar">
+            <h2 class="sidebar-title">Menú</h2>
+            <ul>
+                <li class="menu-item" data-target="calendario">Calendario</li> 
+                <li class="menu-item active" data-target="razas">Razas</li>
+                <li class="menu-item" data-target="semillas">Semillas</li>
+                <li class="menu-item" data-target="lunas">Lunas</li>
+                <li class="menu-item" data-target="nutricion">Nutrición</li>
+            </ul>
+        </nav>
+        
+        <div class="main-content">
+            
+            <div id="calendario" class="content-section">
+                <div class="calendar-card">
+                    <header class="calendar-header">
+                        <button class="nav-button" id="prev-month">❮</button>
+                        <h1 id="month-year" class="month-title"></h1>
+                        <button class="nav-button" id="next-month">❯</button>
+                    </header>
+                    <div class="calendar-grid">
+                        <div class="weekdays-row">
+                            <span>D</span>
+                            <span>L</span>
+                            <span>M</span>
+                            <span>X</span>
+                            <span>J</span>
+                            <span>V</span>
+                            <span>S</span>
+                        </div>
+                        <div class="days-container" id="calendar-days">
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="razas" class="content-section active">
+                <h2 class="section-title">🌿 Razas Recomendadas (Ciclos y Dominancia)</h2>
+                <p>Lista ampliada de cepas populares con detalles sobre su ciclo de vida y dominancia:</p>
+                
+                <dl class="strain-list">
+                    <dt>
+                        Acapulco Gold
+                        <img src="https://via.placeholder.com/60/388E3C/FFFFFF?text=AG" alt="Acapulco Gold" class="strain-img">
+                    </dt>
+                    <dd><strong>Tipo:</strong> Sativa Pura. <strong>Ciclo:</strong> Fotoperiódica (**~6 meses**). <strong>Detalles:</strong> Famosa por su efecto energizante. Cosecha tardía (Abril).</dd>
+                    
+                    <dt>
+                        Amnesia Haze
+                        <img src="https://via.placeholder.com/60/388E3C/FFFFFF?text=AH" alt="Amnesia Haze" class="strain-img">
+                    </dt>
+                    <dd><strong>Tipo:</strong> Sativa dominante. <strong>Ciclo:</strong> Fotoperiódica (**~6 meses**). <strong>Detalles:</strong> Alto rendimiento y fuerte efecto cerebral. Requiere mucho sol y nutrición.</dd>
+                    
+                    <dt>
+                        Northern Lights
+                        <img src="https://via.placeholder.com/60/388E3C/FFFFFF?text=NL" alt="Northern Lights" class="strain-img">
+                    </dt>
+                    <dd><strong>Tipo:</strong> Índica Pura. <strong>Ciclo:</strong> Fotoperiódica (**~5 meses**). <strong>Detalles:</strong> Clásica índica relajante, robusta y de fácil cultivo. Cosecha temprana (Marzo).</dd>
+                    
+                    <dt>
+                        Moby Dick
+                        <img src="https://via.placeholder.com/60/388E3C/FFFFFF?text=MD" alt="Moby Dick" class="strain-img">
+                    </dt>
+                    <dd><strong>Tipo:</strong> Sativa dominante. <strong>Ciclo:</strong> Fotoperiódica (**~6 meses**). <strong>Detalles:</strong> Gran productora que necesita espacio y fertilización intensiva.</dd>
+
+                    <dt>
+                        Bruce Banner
+                        <img src="https://via.placeholder.com/60/388E3C/FFFFFF?text=BB" alt="Bruce Banner" class="strain-img">
+                    </dt>
+                    <dd><strong>Tipo:</strong> Híbrida (Sativa dominante). <strong>Ciclo:</strong> Fotoperiódica (**~5-6 meses**). <strong>Detalles:</strong> Conocida por su potencia extrema (alto THC). Cultivo de rendimiento medio-alto.</dd>
+                    
+                    <dt>
+                        Green Gelato
+                        <img src="https://via.placeholder.com/60/388E3C/FFFFFF?text=GG" alt="Green Gelato" class="strain-img">
+                    </dt>
+                    <dd><strong>Tipo:</strong> Híbrida (Índica/Sativa equilibrada). <strong>Ciclo:</strong> Fotoperiódica (**~5 meses**). <strong>Detalles:</strong> Sabores cítricos. Rápida floración y cogollos densos.</dd>
+
+                    <dt>
+                        Skunk #1
+                        <img src="https://via.placeholder.com/60/388E3C/FFFFFF?text=S1" alt="Skunk #1" class="strain-img">
+                    </dt>
+                    <dd><strong>Tipo:</strong> Híbrida (Clásica). <strong>Ciclo:</strong> Fotoperiódica (**~5 meses**). <strong>Detalles:</strong> Muy estable y productiva. Excelente resistencia general. Ideal para el clima uruguayo.</dd>
+
+                    <dt>
+                        White Widow
+                        <img src="https://via.placeholder.com/60/388E3C/FFFFFF?text=WW" alt="White Widow" class="strain-img">
+                    </dt>
+                    <dd><strong>Tipo:</strong> Híbrida (Índica dominante). <strong>Ciclo:</strong> Fotoperiódica (**~5 meses**). <strong>Detalles:</strong> Una leyenda. Produce cogollos cubiertos de resina. Ciclo rápido.</dd>
+
+                    <dt>
+                        Auto Blue Dream
+                        <img src="https://via.placeholder.com/60/388E3C/FFFFFF?text=BD" alt="Auto Blue Dream" class="strain-img">
+                    </dt>
+                    <dd><strong>Tipo:</strong> Autofloreciente. <strong>Ciclo:</strong> Automática (**~2.5 a 3 meses**). <strong>Detalles:</strong> Versión rápida de la Blue Dream. Buen equilibrio Índica/Sativa. Ideal para múltiples cosechas (Silta).</dd>
+                    
+                    <dt>
+                        Auto Critical Kush
+                        <img src="https://via.placeholder.com/60/388E3C/FFFFFF?text=CK" alt="Auto Critical Kush" class="strain-img">
+                    </dt>
+                    <dd><strong>Tipo:</strong> Autofloreciente (Índica dominante). <strong>Ciclo:</strong> Automática (**~2.5 a 3 meses**). <strong>Detalles:</strong> Ciclo muy rápido. Cogollos pesados y compactos.</dd>
+                </dl>
+            </div>
+
+            <div id="semillas" class="content-section">
+                <h2 class="section-title">🌱 Tipos de Semillas y Ciclos de Cultivo</h2>
+                <dl>
+                    <dt>Semillas **Fotoperiódicas** (Ciclo Largo)</dt>
+                    <dd>Dependen de las horas de luz (fotoperíodo). En exterior en Uruguay, siembras en primavera (Oct-Nov) y cosechas en otoño (Marzo-Abril). Ciclo de unos **5 a 6 meses**.</dd>
+                    
+                    <dt>Semillas **Autoflorecientes** (Automáticas / Tipo Silta)</dt>
+                    <dd>Florecen automáticamente sin depender del fotoperíodo. Ciclo total de **2 a 3 meses**. Permiten varias cosechas por temporada y son perfectas para principiantes.</dd>
+                </dl>
+            </div>
+
+            <div id="lunas" class="content-section">
+                <h2 class="section-title">🌕 Guía de Lunas para el Cultivo</h2>
+                <p>Las fases lunares influyen en el flujo de savia y la germinación, según la tradición del calendario biodinámico:</p>
+                <ul>
+                    <li><strong>Luna Nueva:</strong> Período de **reposo**. Ideal para limpieza, podas drásticas y no tocar la raíz.</li>
+                    <li><strong>Cuarto Creciente:</strong> **Ascenso de Savia**. Excelente para germinar, plantar y trasplantar, ya que el agua sube hacia las partes aéreas.</li>
+                    <li><strong>Luna Llena:</strong> Máximo flujo de savia. Ideal para **esquejes** (alto contenido hormonal en tallos) y cosechar (si se busca aroma y resina).</li>
+                    <li><strong>Cuarto Menguante:</strong> **Descenso de Savia**. Ideal para abonar, regar abundantemente y controlar plagas/hongos, ya que la energía se concentra en la raíz.</li>
+                </ul>
+            </div>
+
+            <div id="nutricion" class="content-section">
+                <h2 class="section-title">🧪 Nutrición (Etapas de Crecimiento)</h2>
+                <p>Un sustrato rico es esencial. El ciclo de Cannabis en Uruguay (exterior) es largo y requiere atención nutricional constante:</p>
+                <dl>
+                    <dt>Crecimiento (Nov. a Ene.):</dt>
+                    <dd>Alto contenido de **Nitrógeno (N)**. Fomentar follaje denso y tallos fuertes.</dd>
+                    
+                    <dt>Pre-Floración (Feb.):</dt>
+                    <dd>Reducir Nitrógeno y aumentar **Fósforo (P)** y **Potasio (K)**. Preparación para la floración.</dd>
+                    
+                    <dt>Floración (Marzo/Abril):</dt>
+                    <dd>Alto contenido de **P y K**. Evitar el exceso de N. Es la etapa crítica de producción de cogollos. Cuidado con la humedad.</dd>
+                </dl>
+            </div>
+            
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
